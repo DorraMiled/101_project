@@ -15,8 +15,6 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
-    BrowserModule,
     //custom imports
     SpellRoutingModule,
   ],

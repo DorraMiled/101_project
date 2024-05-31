@@ -5,12 +5,8 @@ import { SpellIndexComponent } from './views/spellindex/spellindex.component';
 
 
 const routes: Routes = [
-  {
-    path: '', children: [
-      { path: '', pathMatch: "full", component: SpellIndexComponent }
+  { path: '', component: SpellIndexComponent }
 
-    ]
-  }
 ]
 @NgModule({
 

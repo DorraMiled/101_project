@@ -5,16 +5,16 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: AppComponent },
   {
-    path: 'character',
-    loadChildren: () => import('src/app/Modules/characters/characters-routing.module').then(m => m.CharacterRoutingModule)
+    path: 'characters',
+    loadChildren: () => import('./Modules/characters/character.module').then(m => m.CharacterModule)
   },
   {
-    path: 'spell',
-    loadChildren: () => import('src/app/Modules/spells/spell-routing.module').then(m => m.SpellRoutingModule)
+    path: 'spells',
+    loadChildren: () => import('./Modules/spells/spell.module').then(m => m.SpellModule)
   },
   {
-    path: 'bonus',
-    loadChildren: () => import('src/app/Modules/Bonus/bonus-routing.module').then(m => m.BonusRoutingModule)
+    path: 'wizards',
+    loadChildren: () => import('./Modules/wizard/wizard.module').then(m => m.WizardModule)
   },
 
 

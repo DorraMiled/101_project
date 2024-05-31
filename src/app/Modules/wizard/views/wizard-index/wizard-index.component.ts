@@ -3,14 +3,14 @@ import IWizard from 'src/app/Models/wizard';
 import { BonusService } from 'src/app/services/bonus.service';
 
 @Component({
-  selector: 'app-bonusindex',
-  templateUrl: './bonusindex.component.html',
-  styleUrls: ['./bonusindex.component.css']
+  selector: 'app-wizard-index',
+  templateUrl: './wizard-index.component.html',
+  styleUrls: ['./wizard-index.component.css']
 })
-export class BonusindexComponent implements OnInit {
+export class WizardIndexComponent implements OnInit {
   allwizards: IWizard[] = [];
 
-  test = new Array(5)
+
 
   constructor(private bonusService: BonusService) { }
 
