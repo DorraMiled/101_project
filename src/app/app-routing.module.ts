@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'spell',
     loadChildren: () => import('src/app/Modules/spells/spell-routing.module').then(m => m.SpellRoutingModule)
   },
+  {
+    path: 'bonus',
+    loadChildren: () => import('src/app/Modules/Bonus/bonus-routing.module').then(m => m.BonusRoutingModule)
+  },
+
 
 
 ];
