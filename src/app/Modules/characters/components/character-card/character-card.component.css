@@ -1,0 +1,21 @@
+.card {
+    width: 20rem;
+
+}
+
+.card figure {
+    height: 20rem;
+    overflow: hidden;
+
+}
+
+.card img {
+    object-fit: cover;
+    /*img tghiti espace kol*/
+    width: 100%;
+    /*img tekhou largeur fig kol*/
+    height: 100%;
+    object-position: top;
+    /*tabdamel fouq*/
+
+}

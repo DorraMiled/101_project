@@ -4,20 +4,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { CharactersComponent } from 'src/app/character/characters.component';
+import { SpellModule } from './Modules/spells/spell.module';
+import { CharacterModule } from './Modules/characters/character.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharactersComponent
-
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
