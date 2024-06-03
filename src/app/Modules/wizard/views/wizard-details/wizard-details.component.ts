@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BonusService } from 'src/app/services/bonus.service';
 import IWizard from 'src/app/Models/wizard';
 import IWand from 'src/app/Models/wizard';
 
 @Component({
-  selector: 'app-wizard-form',
-  templateUrl: './wizard-form.component.html',
-  styleUrls: ['./wizard-form.component.css']
+  selector: 'app-wizard-details',
+  templateUrl: './wizard-details.component.html',
+  styleUrls: ['./wizard-details.component.css']
 })
-export class WizardFormComponent implements OnInit {
+export class WizardDetailsComponent implements OnInit {
   wizardForm: FormGroup;
   wizardId: string = '';
 
@@ -49,7 +49,7 @@ export class WizardFormComponent implements OnInit {
   save() {
     if (this.wizardForm.valid) {
       const wizard: IWizard = this.wizardForm.value;
-      if (this.wizardId !== '0') {
+      if (this.wizardId) {
         this.bonusService.edit(this.wizardId, wizard).subscribe({
           next: (data) => {
             this.router.navigateByUrl('wizards');

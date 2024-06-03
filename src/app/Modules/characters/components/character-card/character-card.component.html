@@ -5,5 +5,11 @@
     <div class="p-4">
         <h2 class="card-title">{{ data.name }}</h2>
         <p>House: {{ data.house }}</p>
+        <p class="card-text">Wand:</p>
+        <ul class="list-group">
+            <li class="list-group-item">Wood: {{ data.wand?.wood }}</li>
+            <li class="list-group-item">Core: {{ data.wand?.core }}</li>
+            <li class="list-group-item">Length: {{ data.wand?.length }}</li>
+        </ul>
     </div>
 </div>

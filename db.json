@@ -1,16 +1,140 @@
 {
   "wizards": [
     {
-      "id": "1",
-      "name": "tetette",
-      "house": "testtt",
-      "wand": 30
+      "name": "testupdatzrrrrrrrrrr",
+      "house": "ddddeqazd",
+      "wands": [
+        {
+          "wood": "sfs",
+          "core": "fsf",
+          "length": 5
+        }
+      ],
+      "id": "f409"
     },
     {
-      "id": "2",
-      "name": "rrrzrz",
-      "house": "zzzzzzzz",
-      "wand": 50
+      "name": "erezedzqqhjghjg",
+      "house": "rrrrrrrrrrrrrjhff",
+      "wands": [
+        {
+          "wood": "ezzazkjhg",
+          "core": "gffgdh",
+          "length": 20
+        },
+        {
+          "wood": "gerdfkkk",
+          "core": "rsrg",
+          "length": 66
+        }
+      ],
+      "id": "f4dc"
+    },
+    {
+      "id": "5db9",
+      "name": "eytfdgrseq",
+      "house": "yhgtfdrseq",
+      "wands": [
+        {
+          "wood": "TGERTSSQ",
+          "core": "HGFDS",
+          "length": 203
+        }
+      ]
+    },
+    {
+      "name": "DSFG",
+      "house": "SDFG",
+      "wands": [
+        {
+          "wood": "SDFG",
+          "core": "DFGHN",
+          "length": 6
+        }
+      ],
+      "id": "aba3"
+    },
+    {
+      "id": "4c0f",
+      "name": "ez",
+      "house": "ze",
+      "wands": [
+        {
+          "wood": "ze",
+          "core": "ez",
+          "length": 5
+        }
+      ]
+    },
+    {
+      "name": "zerty",
+      "house": "azerty",
+      "wands": [],
+      "id": "c01a"
+    },
+    {
+      "id": "1abb",
+      "name": "dddd",
+      "house": "szssss",
+      "wands": [
+        {
+          "wood": "zzzzz",
+          "core": "ssss",
+          "length": 30
+        },
+        {
+          "wood": "ddddd",
+          "core": "ssddd",
+          "length": 3
+        }
+      ]
+    },
+    {
+      "id": "f7ed",
+      "name": "rrrrr",
+      "house": "rrrr",
+      "wands": [
+        {
+          "wood": "rrrr",
+          "core": "rrrr",
+          "length": 20
+        }
+      ]
+    },
+    {
+      "id": "6425",
+      "name": "rrrrr",
+      "house": "rrrruuuuuuu",
+      "wands": [
+        {
+          "wood": "rrrr",
+          "core": "rrrr",
+          "length": 20
+        }
+      ]
+    },
+    {
+      "id": "f4e6",
+      "name": "test",
+      "house": "test",
+      "wands": [
+        {
+          "wood": "eeeeee",
+          "core": "eeee",
+          "length": 20
+        }
+      ]
+    },
+    {
+      "id": "f6ba",
+      "name": "testcreate",
+      "house": "eee",
+      "wands": [
+        {
+          "wood": "eee",
+          "core": "eee",
+          "length": 20
+        }
+      ]
     }
   ]
 }

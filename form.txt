@@ -1,0 +1,62 @@
+<div class="flex justify-center items-start h-screen p-16">
+    <form class="max-w-sm mx-auto">
+        <div class="mb-5">
+            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wizard
+                name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="formdata.name"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+
+        <div class="mb-5">
+            <label for="house" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wizard
+                house</label>
+            <input type="text" id="house" name="house" [(ngModel)]="formdata.house"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+
+        <div class="mb-5">
+            <label for="wand" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wizard
+                wand</label>
+            <input type="number" id="wand" name="wand" [(ngModel)]="formdata.wand"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+
+        <button type="submit" (click)="create()"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Add</button>
+    </form>
+</div>
+
+
+/*******************************ts************************************/
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import IWizard from 'src/app/Models/wizard';
+import { BonusService } from 'src/app/services/bonus.service';
+
+@Component({
+  selector: 'app-wizard-form',
+  templateUrl: './wizard-form.component.html',
+  styleUrls: ['./wizard-form.component.css']
+})
+export class WizardFormComponent {
+  constructor(private bonusService: BonusService, private router: Router) { }
+  formdata: IWizard = {
+    name: '',
+    house: '',
+    wand: 0,
+
+  }
+  create() {
+    this.bonusService.create(this.formdata).subscribe({
+      next: (data) => {
+        this.router.navigateByUrl("wizards")
+
+      },
+      error: (er) => {
+        console.log(er)
+      }
+    })
+  }
+
+}
