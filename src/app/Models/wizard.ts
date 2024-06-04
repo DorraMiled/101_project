@@ -5,9 +5,7 @@ export default interface IWand {
 }
 
 export default interface IWizard {
-    id: string;
     name: string;
     house: string;
-    wands: IWand[];
-
+    wand: Partial<IWand[]>;
 }

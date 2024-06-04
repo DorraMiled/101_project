@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import IWand from 'src/app/Models/character';
+import { Component, Input } from '@angular/core';
 import ICharacter from 'src/app/Models/character';
-import { CharService } from 'src/app/services/character.service'
 
 @Component({
   selector: 'app-character-card',

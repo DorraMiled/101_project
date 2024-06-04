@@ -8,17 +8,15 @@ import IWizard from './Models/wizard';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  allwizards: IWizard[] = [];
-
-  test = new Array(5)
+  allwizards: Partial<IWizard[]> = [];
 
   constructor(private bonusService: BonusService) { }
 
   ngOnInit(): void {
-    this.bonusService.getAllWizards().subscribe((data) => {
-      this.allwizards = data;
-
-    })
+    this.bonusService.getAllWizards()
+      .subscribe((data) => {
+        this.allwizards = data;
+      })
 
   }
 }

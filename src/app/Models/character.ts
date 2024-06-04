@@ -1,9 +1,5 @@
-export default interface IWand {
-    wood: string;
-    core: string;
-    length: number;
-}
-
+import IWand from "./wizard";
+import IWizard from "./wizard";
 
 export default interface ICharacter {
     name: string;

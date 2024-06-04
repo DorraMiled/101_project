@@ -81,22 +81,25 @@ export class WizardFormComponent implements OnInit {
   }
 
   getById(id: string) {
-    this.bonusService.getWizardByid(id).subscribe((wizard) => {
-      this.wizardForm.patchValue({
-        name: wizard.name,
-        house: wizard.house
+    this.bonusService.getWizardByid(id)
+      .subscribe((wizard: Partial<IWizard>) => {
+        this.wizardForm.patchValue({
+          name: wizard.name,
+          house: wizard.house
+        });
+
+        if (wizard.wand && wizard.wand.length > 0)
+          this.setWands(wizard.wand ?? []);
       });
-      this.setWands(wizard.wands);
-    });
   }
 
-  setWands(wands: IWand[]) {
+  setWands(wands: Partial<IWand[]>) {
     this.wands.clear();
     wands.forEach((wand) => {
       this.wands.push(this.fb.group({
-        wood: wand.wood,
-        core: wand.core,
-        length: wand.length
+        wood: wand?.wood,
+        core: wand?.core,
+        length: wand?.length
       }));
     });
   }

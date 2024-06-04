@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import IWand from 'src/app/Models/wizard';
+import { Observable, Subject } from 'rxjs';
+
 import IWizard from 'src/app/Models/wizard';
 import { BonusService } from 'src/app/services/bonus.service';
 
@@ -10,33 +10,24 @@ import { BonusService } from 'src/app/services/bonus.service';
   styleUrls: ['./wizard-index.component.css']
 })
 export class WizardIndexComponent implements OnInit {
-  allwizards: IWizard[] = [];
-
-
-
+  allwizards: Partial<IWizard[]> = [];
+  allwizards$!: Observable<any>;
 
   constructor(private bonusService: BonusService) { }
 
   ngOnInit(): void {
-    this.bonusService.getAllWizards().subscribe((data) => {
-      this.allwizards = data;
-      console.log(this.allwizards);
 
-    });
+    this.allwizards$ = this.bonusService.getAllWizards();
 
-  }
+    // this.bonusService.getAllWizards()
+    //   .subscribe({
+    //     next: (data: Partial<IWizard[]>) => {
 
-  getallwands(wands: IWand[]): number {
-    console.log(wands)
-    if (!wands || !Array.isArray(wands)) {
-      return 0;
-    }
-
-    return wands.length;
+    //       this.allwizards = data;
+    //     }
+    //   });
 
   }
-
-
 
 }
 

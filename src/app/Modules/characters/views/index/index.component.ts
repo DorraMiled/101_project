@@ -8,7 +8,7 @@ import ICharacter from 'src/app/Models/character';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
-  characters: ICharacter[] = [];
+  characters: any[] = [];
 
 
   constructor(private charService: CharService) { }

@@ -21,16 +21,17 @@
             </tr>
         </thead>
         <tbody>
-            <ng-container *ngFor="let item of allwizards">
-                <tr>
-                    <th>{{ item.name }}</th>
-                    <th>{{ item.house }}</th>
-                    <th>{{ item.wands?.length }}</th>
+            <!-- <ng-container *ngFor="let item of allwizards"> -->
+            <ng-container *ngIf="(allwizards$ |async) as wizards">
+                <tr *ngFor="let item of wizards">
+                    <th>{{ item?.name}}</th>
+                    <th>{{ item?.house }}</th>
+                    <th>{{ item?.wands?.length }}</th>
 
 
                     <th>
                         <button href="" class="btn btn-ghost btn-xs"
-                            [routerLink]="['/wizards/form',item.id]">details</button>
+                            [routerLink]="['/wizards/form',item?.id]">details</button>
                     </th>
                 </tr>
             </ng-container>
