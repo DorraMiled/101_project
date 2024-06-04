@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { HomeModule } from './Modules/home/home.module';
+
+// CUSTOM IMPORTS
+import { HomeindexComponent } from './views/homeindex/homeindex.component';
 
 const routes: Routes = [
 
   {
     path: '',
-    loadChildren: () => import('./Modules/home/home.module').then(m => m.HomeModule)
+    pathMatch: 'full',
+    component: HomeindexComponent
   },
   {
     path: 'characters',
@@ -21,9 +23,6 @@ const routes: Routes = [
     path: 'wizards',
     loadChildren: () => import('./Modules/wizard/wizard.module').then(m => m.WizardModule)
   },
-
-
-
 ];
 
 @NgModule({

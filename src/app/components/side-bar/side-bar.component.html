@@ -1,0 +1,16 @@
+<div class="h-full w-full bg-base-200">
+  <ul class="menu">
+
+    <ng-container *ngFor="let item of navigationItems">
+      <li>
+        <a [routerLink]="[item.route]">
+
+          <app-icon [iconName]="item.icon"></app-icon>
+
+          {{item.label}}
+        </a>
+      </li>
+    </ng-container>
+
+  </ul>
+</div>
