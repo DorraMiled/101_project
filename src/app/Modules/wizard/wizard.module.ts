@@ -6,15 +6,14 @@ import { WizardRoutingModule } from './wizard-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { WizardDetailsComponent } from './views/wizard-details/wizard-details.component';
+
 
 
 
 @NgModule({
   declarations: [
     WizardIndexComponent,
-    WizardFormComponent,
-    WizardDetailsComponent
+    WizardFormComponent
   ],
   imports: [
     CommonModule,

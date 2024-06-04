@@ -135,6 +135,18 @@
           "length": 20
         }
       ]
+    },
+    {
+      "name": "tesyyyyyy",
+      "house": "rrr",
+      "wands": [
+        {
+          "wood": "rrr",
+          "core": "rrr",
+          "length": 0
+        }
+      ],
+      "id": "c5ba"
     }
   ]
 }

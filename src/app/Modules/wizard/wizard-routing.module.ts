@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { WizardIndexComponent } from './views/wizard-index/wizard-index.component';
 import { WizardFormComponent } from './views/wizard-form/wizard-form.component';
-import { WizardDetailsComponent } from './views/wizard-details/wizard-details.component';
+
 
 
 
