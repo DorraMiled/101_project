@@ -1,152 +1,55 @@
 {
   "wizards": [
     {
-      "name": "testupdatzrrrrrrrrrr",
-      "house": "ddddeqazd",
+      "name": "testupdate",
+      "house": "test",
       "wands": [
         {
-          "wood": "sfs",
-          "core": "fsf",
-          "length": 5
-        }
-      ],
-      "id": "f409"
-    },
-    {
-      "name": "erezedzqqhjghjg",
-      "house": "rrrrrrrrrrrrrjhff",
-      "wands": [
-        {
-          "wood": "ezzazkjhg",
-          "core": "gffgdh",
+          "wood": "rrrr",
+          "core": "rrrr",
           "length": 20
-        },
-        {
-          "wood": "gerdfkkk",
-          "core": "rsrg",
-          "length": 66
         }
       ],
-      "id": "f4dc"
+      "id": "f7ed"
     },
     {
-      "id": "5db9",
-      "name": "eytfdgrseq",
-      "house": "yhgtfdrseq",
+      "id": "2c03",
+      "name": "testcreate",
+      "house": "diva",
       "wands": [
         {
-          "wood": "TGERTSSQ",
-          "core": "HGFDS",
-          "length": 203
-        }
-      ]
-    },
-    {
-      "name": "DSFG",
-      "house": "SDFG",
-      "wands": [
-        {
-          "wood": "SDFG",
-          "core": "DFGHN",
-          "length": 6
-        }
-      ],
-      "id": "aba3"
-    },
-    {
-      "id": "4c0f",
-      "name": "ez",
-      "house": "ze",
-      "wands": [
-        {
-          "wood": "ze",
-          "core": "ez",
-          "length": 5
-        }
-      ]
-    },
-    {
-      "name": "zerty",
-      "house": "azerty",
-      "wands": [],
-      "id": "c01a"
-    },
-    {
-      "id": "1abb",
-      "name": "dddd",
-      "house": "szssss",
-      "wands": [
-        {
-          "wood": "zzzzz",
-          "core": "ssss",
-          "length": 30
+          "wood": "test",
+          "core": "test",
+          "length": 2
         },
         {
-          "wood": "ddddd",
-          "core": "ssddd",
+          "wood": "test2",
+          "core": "test2",
           "length": 3
         }
       ]
     },
     {
-      "id": "f7ed",
-      "name": "rrrrr",
-      "house": "rrrr",
+      "id": "b7f1",
+      "name": "dorra",
+      "house": "dorra",
       "wands": [
         {
-          "wood": "rrrr",
-          "core": "rrrr",
-          "length": 20
-        }
-      ]
-    },
-    {
-      "id": "6425",
-      "name": "rrrrr",
-      "house": "rrrruuuuuuu",
-      "wands": [
+          "wood": "testd",
+          "core": "testd",
+          "length": 6
+        },
         {
-          "wood": "rrrr",
-          "core": "rrrr",
-          "length": 20
-        }
-      ]
-    },
-    {
-      "id": "f4e6",
-      "name": "test",
-      "house": "test",
-      "wands": [
+          "wood": "testd2",
+          "core": "testd2",
+          "length": 6
+        },
         {
-          "wood": "eeeeee",
-          "core": "eeee",
-          "length": 20
-        }
-      ]
-    },
-    {
-      "id": "f6ba",
-      "name": "testcreate",
-      "house": "eee",
-      "wands": [
-        {
-          "wood": "eee",
-          "core": "eee",
-          "length": 20
-        }
-      ]
-    },
-    {
-      "name": "tesyyyyyy",
-      "house": "rrr",
-      "wands": [
-        {
-          "wood": "rrr",
-          "core": "rrr",
+          "wood": "testd3",
+          "core": "testd3",
           "length": 0
         }
-      ],
-      "id": "c5ba"
+      ]
     }
   ]
 }
