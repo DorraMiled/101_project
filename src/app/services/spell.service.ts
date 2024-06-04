@@ -13,7 +13,7 @@ export class SpellService {
 
     constructor(private http: HttpClient) { }
 
-    getSpells(): Observable<any> {
+    getSpells(): Observable<ISpell[]> {
         return this.http.get<ISpell[]>(this.apiUrl);
     }
 

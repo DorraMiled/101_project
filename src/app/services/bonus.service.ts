@@ -27,7 +27,7 @@ export class BonusService {
 
     }
 
-    edit(id: string, data: IWizard): Observable<any> {
+    edit(id: string, data: IWizard): Observable<IWizard[]> {
         const apiurl = `${this.url}/${id}`;
         return this.httpClient.put<IWizard[]>(apiurl, data);
     }

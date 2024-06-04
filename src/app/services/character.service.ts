@@ -12,7 +12,7 @@ export class CharService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<any> {
+  getCharacters(): Observable<ICharacter[]> {
     return this.http.get<ICharacter[]>(this.apiUrl);
   }
 
