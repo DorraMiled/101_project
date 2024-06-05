@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BonusService } from 'src/app/services/bonus.service';
 import IWizard from 'src/app/Models/wizard';
 import IWand from 'src/app/Models/wizard';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-wizard-form',
@@ -11,97 +12,119 @@ import IWand from 'src/app/Models/wizard';
   styleUrls: ['./wizard-form.component.css']
 })
 export class WizardFormComponent implements OnInit {
-  wizardForm: FormGroup;
-  wizardId: string = '';
+
+  // main wozard form
+  protected wizardForm!: FormGroup;
+
+  // current wizard ID
+  protected wizardId: string = '';
 
   constructor(
     private fb: FormBuilder,
     private bonusService: BonusService,
     private router: Router,
     private route: ActivatedRoute
-  ) {
+  ) { }
+
+  ngOnInit(): void {
+
+    // get current wizard ID
+    this.wizardId = this.route.snapshot.params['id'];
+
+    // create initial wizard fprm
+    this.createForm();
+
+    // get wizard details
+    if (this.wizardId !== '0')
+      this.getWizardDetails(this.wizardId);
+  }
+
+
+  getWizardDetails(id: string) {
+    this.bonusService.getWizardByid(id)
+      .pipe(take(1))
+      .subscribe({
+        next: (wizard: Partial<IWizard>) => {
+          this.patchForm(wizard);
+
+          if (wizard.wands && wizard.wands.length > 0)
+            this.syncViewToIncludeWands(wizard.wands ?? []);
+        }
+      });
+  }
+
+  save() {
+    if (!this.wizardForm.valid) return false;
+
+
+    const wizard: IWizard = this.wizardForm.value;
+    if (this.wizardId !== '0') {
+      this.bonusService.edit(this.wizardId, wizard).subscribe({
+        next: (data) => {
+          this.router.navigateByUrl('wizards');
+        },
+        error: (er) => {
+          console.log(er);
+        }
+      });
+    } else {
+      this.bonusService.create(wizard).subscribe({
+        next: (data) => {
+          this.router.navigateByUrl('wizards');
+        },
+        error: (er) => {
+          console.log(er);
+        }
+      });
+    }
+    return true
+  }
+
+  syncViewToIncludeWands(wands: Partial<IWand[]>) {
+    // this.wands.clear();
+    wands.forEach((wand) => {
+      this.addWand(wand);
+    });
+  }
+
+  // #region FORM METHODS
+  // **** FORM RELATED METHODS *****
+
+  createForm() {
     this.wizardForm = this.fb.group({
       name: ['', Validators.required],
       house: ['', Validators.required],
-      wands: this.fb.array([this.createWandGroup()])
+      wands: this.fb.array([])
     });
   }
+
+  patchForm(payload: Partial<IWizard>) {
+    this.wizardForm.patchValue({
+      name: payload.name,
+      house: payload.house
+    });
+  }
+
+  // get form array of current formGroup (all wands)
   get wands(): FormArray {
     return this.wizardForm.get('wands') as FormArray;
   }
 
-  createWandGroup(): FormGroup {
-    return this.fb.group({
-      wood: ['', Validators.required],
-      core: ['', Validators.required],
-      length: [0, Validators.required]
+  // add new formGroup to formArray (new wand)
+  addWand(payload: any) {
+    const NEW_WAND_FORM_GROUP = this.fb.group({
+      wood: [payload?.wood, Validators.required],
+      core: [payload?.core, Validators.required],
+      length: [payload?.length, Validators.required]
     });
+
+    this.wands.push(NEW_WAND_FORM_GROUP);
   }
 
-  addWand() {
-    this.wands.push(this.createWandGroup());
-  }
-
+  // remove formGroup from formArray (remove wand)
   removeWand(index: number) {
     this.wands.removeAt(index);
   }
 
-  save() {
-    if (this.wizardForm.valid) {
-      const wizard: IWizard = this.wizardForm.value;
-      if (this.wizardId !== '0') {
-        this.bonusService.edit(this.wizardId, wizard).subscribe({
-          next: (data) => {
-            this.router.navigateByUrl('wizards');
-          },
-          error: (er) => {
-            console.log(er);
-          }
-        });
-      } else {
-        this.bonusService.create(wizard).subscribe({
-          next: (data) => {
-            this.router.navigateByUrl('wizards');
-          },
-          error: (er) => {
-            console.log(er);
-          }
-        });
-      }
-    }
-  }
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.wizardId = params.get('id') || '';
-      if (this.wizardId) {
-        this.getById(this.wizardId);
-      }
-    });
-  }
-
-  getById(id: string) {
-    this.bonusService.getWizardByid(id)
-      .subscribe((wizard: Partial<IWizard>) => {
-        this.wizardForm.patchValue({
-          name: wizard.name,
-          house: wizard.house
-        });
-
-        if (wizard.wand && wizard.wand.length > 0)
-          this.setWands(wizard.wand ?? []);
-      });
-  }
-
-  setWands(wands: Partial<IWand[]>) {
-    this.wands.clear();
-    wands.forEach((wand) => {
-      this.wands.push(this.fb.group({
-        wood: wand?.wood,
-        core: wand?.core,
-        length: wand?.length
-      }));
-    });
-  }
 }
 

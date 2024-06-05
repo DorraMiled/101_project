@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BonusService } from './services/bonus.service';
 import IWizard from './Models/wizard';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.bonusService.getAllWizards()
-      .subscribe((data) => {
-        this.allwizards = data;
+      .pipe(take(1))
+      .subscribe({
+        next: (data) => {
+          this.allwizards = data;
+        }
       })
-
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { take } from 'rxjs';
 import ISpell from 'src/app/Models/spell';
 import { SpellService } from 'src/app/services/spell.service';
 
@@ -17,11 +18,13 @@ export class SpellIndexComponent {
 
   ngOnInit(): void {
     this.spellService.getSpells()
-      .subscribe((data: ISpell[]) => {
-        this.spells = data;
-      });
+      .pipe(take(1))
+      .subscribe({
+        next: (data: ISpell[]) => {
+          this.spells = data;
 
-
+        }
+      })
   }
 
 }

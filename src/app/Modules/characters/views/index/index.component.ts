@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CharService } from 'src/app/services/character.service';
 import ICharacter from 'src/app/Models/character';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-index',
@@ -15,9 +16,13 @@ export class IndexComponent {
 
   ngOnInit(): void {
     this.charService.getCharacters()
-      .subscribe((data: ICharacter[]) => {
-        this.characters = data;
-      });
+      .pipe(take(1))
+      .subscribe({
+        next: (data: ICharacter[]) => {
+          this.characters = data;
+        }
+      })
+
 
 
   }

@@ -5,9 +5,9 @@
       "house": "test",
       "wands": [
         {
-          "wood": "rrrr",
-          "core": "rrrr",
-          "length": 20
+          "wood": "rrr",
+          "core": "rrr",
+          "length": 0
         }
       ],
       "id": "f7ed"
@@ -47,6 +47,30 @@
         {
           "wood": "testd3",
           "core": "testd3",
+          "length": 0
+        }
+      ]
+    },
+    {
+      "id": "8add",
+      "name": "dorra miled",
+      "house": "errr",
+      "wands": [
+        {
+          "wood": "eee",
+          "core": "eee",
+          "length": 2
+        }
+      ]
+    },
+    {
+      "id": "161a",
+      "name": "testcreate",
+      "house": "ssss2",
+      "wands": [
+        {
+          "wood": "fff",
+          "core": "fff",
           "length": 0
         }
       ]
