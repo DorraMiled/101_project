@@ -11,18 +11,18 @@ import { SpellService } from 'src/app/services/spell.service';
 export class SpellIndexComponent {
   spells: ISpell[] = [];
 
-
-  constructor(
-    private spellService: SpellService
-  ) { }
+  constructor(private spellService: SpellService) { }
 
   ngOnInit(): void {
+    this.getAllSpells()
+  }
+
+  getAllSpells() {
     this.spellService.getSpells()
       .pipe(take(1))
       .subscribe({
         next: (data: ISpell[]) => {
           this.spells = data;
-
         }
       })
   }

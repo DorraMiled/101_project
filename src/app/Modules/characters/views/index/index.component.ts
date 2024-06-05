@@ -11,10 +11,13 @@ import { take } from 'rxjs';
 export class IndexComponent {
   characters: any[] = [];
 
-
   constructor(private charService: CharService) { }
 
   ngOnInit(): void {
+    this.getAllCharacters()
+  }
+
+  getAllCharacters() {
     this.charService.getCharacters()
       .pipe(take(1))
       .subscribe({
@@ -22,8 +25,6 @@ export class IndexComponent {
           this.characters = data;
         }
       })
-
-
 
   }
 
