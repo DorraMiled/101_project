@@ -5,6 +5,7 @@ import { BonusService } from 'src/app/services/bonus.service';
 import IWizard from 'src/app/Models/wizard';
 import IWand from 'src/app/Models/wizard';
 import { take } from 'rxjs';
+import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Component({
   selector: 'app-wizard-form',
@@ -12,6 +13,29 @@ import { take } from 'rxjs';
   styleUrls: ['./wizard-form.component.css']
 })
 export class WizardFormComponent implements OnInit {
+
+
+  //for fixed form inputs
+  protected formTemplate = [
+    { label: 'Wizard name', ControlName: 'name' },
+    { label: 'Wizard house', ControlName: 'house' }
+
+  ]
+
+  //for form array inputs
+  protected formarrayTemplate = [
+    { label: 'Wand Wood', ControlName: 'wood' },
+    { label: 'Wand Core', ControlName: 'core' },
+    { label: 'Wand Length', ControlName: 'length' }
+  ]
+
+  //for form buttons 
+  protected formbutton = [
+
+    { type: 'button', label: 'Add Wand', Action: () => this.addWand({}) },
+    { type: 'submit', label: 'Add', Action: () => { } },
+
+  ]
 
   // main wozard form
   protected wizardForm!: FormGroup;

@@ -1,20 +1,13 @@
 {
   "wizards": [
     {
-      "name": "testupdate",
+      "name": "testupdate222",
       "house": "test",
-      "wands": [
-        {
-          "wood": "rrr",
-          "core": "rrr",
-          "length": 0
-        }
-      ],
+      "wands": [],
       "id": "f7ed"
     },
     {
-      "id": "2c03",
-      "name": "testcreate",
+      "name": "testcreate222",
       "house": "diva",
       "wands": [
         {
@@ -27,7 +20,8 @@
           "core": "test2",
           "length": 3
         }
-      ]
+      ],
+      "id": "2c03"
     },
     {
       "id": "b7f1",
@@ -74,6 +68,18 @@
           "length": 0
         }
       ]
+    },
+    {
+      "name": "test",
+      "house": "dorra miled",
+      "wands": [
+        {
+          "wood": "hhh",
+          "core": "hhh",
+          "length": "20"
+        }
+      ],
+      "id": "9ddc"
     }
   ]
 }
