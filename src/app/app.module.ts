@@ -12,12 +12,14 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { IconComponent } from './components/icon/icon.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeindexComponent,
     SideBarComponent,
     IconComponent,
+
   ],
   imports: [
     BrowserModule,

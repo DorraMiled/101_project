@@ -1,19 +1,18 @@
 <div class="flex justify-between items-center">
-    <h1 class="text-2xl font-bold ml-4 mt-10">Available wizards</h1>
+    <div class="flex-grow text-center mt-10">
+        <h1 class="text-3xl font-bold text-gray-800 dark:text-white">Available wizards</h1>
+    </div>
     <div class="mr-4 mt-10">
-        <a href="/wizards/form/0"
-            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Add
-            your wizard</a>
+        <button type="button" [routerLink]="['/wizards/form/0']"
+            class="glass text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+            Add your wizard
+        </button>
     </div>
 </div>
-
-
 <div class="overflow-x-auto flex justify-center">
-
     <table class="table w-full md:w-2/3 lg:w-1/2">
         <thead>
             <tr>
-
                 <th>Name</th>
                 <th>House</th>
                 <th>Wands</th>
@@ -23,20 +22,18 @@
         <tbody>
             <!-- <ng-container *ngFor="let item of allwizards"> -->
             <ng-container *ngIf="(allwizards$ |async) as wizards">
-                <tr *ngFor="let item of wizards">
+                <tr class="hover" *ngFor="let item of wizards">
                     <th>{{ item?.name}}</th>
                     <th>{{ item?.house }}</th>
                     <th>{{ item?.wands?.length }}</th>
 
 
                     <th>
-                        <button href="" class="btn btn-ghost btn-xs"
-                            [routerLink]="['/wizards/form',item?.id]">details</button>
+                        <button href="" class="btn glass btn-xs"
+                            [routerLink]="['/wizards/form',item?.id]">Details</button>
                     </th>
                 </tr>
             </ng-container>
         </tbody>
     </table>
-
-
 </div>

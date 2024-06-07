@@ -7,6 +7,7 @@ import IWand from 'src/app/Models/wizard';
 import { take } from 'rxjs';
 import { Action } from 'rxjs/internal/scheduler/Action';
 
+
 @Component({
   selector: 'app-wizard-form',
   templateUrl: './wizard-form.component.html',
@@ -29,11 +30,11 @@ export class WizardFormComponent implements OnInit {
     { label: 'Wand Length', ControlName: 'length' }
   ]
 
-  //for form buttons 
+  //for form buttons
   protected formbutton = [
 
     { type: 'button', label: 'Add Wand', Action: () => this.addWand({}) },
-    { type: 'submit', label: 'Add', Action: () => { } },
+    { type: 'submit', label: 'Save', Action: () => { } },
 
   ]
 
@@ -48,6 +49,7 @@ export class WizardFormComponent implements OnInit {
     private bonusService: BonusService,
     private router: Router,
     private route: ActivatedRoute
+
   ) { }
 
   ngOnInit(): void {
@@ -86,6 +88,7 @@ export class WizardFormComponent implements OnInit {
       this.bonusService.edit(this.wizardId, wizard).subscribe({
         next: (data) => {
           this.router.navigateByUrl('wizards');
+
         },
         error: (er) => {
           console.log(er);
@@ -95,6 +98,8 @@ export class WizardFormComponent implements OnInit {
       this.bonusService.create(wizard).subscribe({
         next: (data) => {
           this.router.navigateByUrl('wizards');
+
+
         },
         error: (er) => {
           console.log(er);

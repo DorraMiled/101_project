@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     WizardIndexComponent,
@@ -20,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     WizardRoutingModule,
     FormsModule,
     ReactiveFormsModule
+
+
+
 
   ]
 })

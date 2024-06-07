@@ -3,7 +3,13 @@
     {
       "name": "testupdate222",
       "house": "test",
-      "wands": [],
+      "wands": [
+        {
+          "wood": "fff",
+          "core": "fff",
+          "length": "2"
+        }
+      ],
       "id": "f7ed"
     },
     {
@@ -80,6 +86,24 @@
         }
       ],
       "id": "9ddc"
+    },
+    {
+      "id": "ee55",
+      "name": "testsss",
+      "house": "sssss",
+      "wands": []
+    },
+    {
+      "name": "test",
+      "house": "dorra miled",
+      "wands": [
+        {
+          "wood": "rrrrrr",
+          "core": "rrr",
+          "length": "2"
+        }
+      ],
+      "id": "5cbe"
     }
   ]
 }
