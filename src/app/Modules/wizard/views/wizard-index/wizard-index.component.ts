@@ -13,13 +13,12 @@ import { BonusService } from 'src/app/services/bonus.service';
 export class WizardIndexComponent implements OnInit {
   allwizards: Partial<IWizard[]> = [];
   allwizards$!: Observable<any>;
-
+  protected iconType: string = 'check';
+  protected msg: string = 'created with success';
 
   constructor(
     private bonusService: BonusService,
   ) { }
-
-
 
   ngOnInit(): void {
 

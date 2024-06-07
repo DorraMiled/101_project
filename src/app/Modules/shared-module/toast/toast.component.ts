@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-toast',
@@ -9,6 +10,23 @@ export class ToastComponent {
 
   @Input() message!: string;
   @Input() iconName: string = 'check';
-  protected isVisible: boolean = false;
+  isVisible: boolean = false;
+
+  constructor(private toastService: ToastService) { }
+
+
+  ngOnInit() {
+    this.toastService.toastMessage$
+      .subscribe({
+        next: (toast => {
+          this.message = toast.message;
+          this.iconName = toast.iconName;
+          this.isVisible = toast.isVisible;
+        })
+      })
+  }
+
+
+
 
 }

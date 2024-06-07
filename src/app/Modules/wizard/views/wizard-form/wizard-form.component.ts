@@ -6,6 +6,7 @@ import IWizard from 'src/app/Models/wizard';
 import IWand from 'src/app/Models/wizard';
 import { take } from 'rxjs';
 import { Action } from 'rxjs/internal/scheduler/Action';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -15,8 +16,9 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class WizardFormComponent implements OnInit {
 
-  protected iconType: string = 'check';
-  protected msg: string = 'created with success';
+  // protected iconType: string = 'check';
+  // protected msg: string = 'created with success';
+
 
 
   //for fixed form inputs
@@ -51,7 +53,8 @@ export class WizardFormComponent implements OnInit {
     private fb: FormBuilder,
     private bonusService: BonusService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private toastService: ToastService
 
   ) { }
 
@@ -90,6 +93,8 @@ export class WizardFormComponent implements OnInit {
     if (this.wizardId !== '0') {
       this.bonusService.edit(this.wizardId, wizard).subscribe({
         next: (data) => {
+          this.toastService.showToast('Wizard updated successfully', 'check');
+
           this.router.navigateByUrl('wizards');
 
         },
@@ -100,6 +105,8 @@ export class WizardFormComponent implements OnInit {
     } else {
       this.bonusService.create(wizard).subscribe({
         next: (data) => {
+          this.toastService.showToast('Wizard created successfully', 'check');
+
           this.router.navigateByUrl('wizards');
 
 
