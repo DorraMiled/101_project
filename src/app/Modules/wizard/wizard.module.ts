@@ -6,6 +6,7 @@ import { WizardRoutingModule } from './wizard-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModuleModule } from '../shared-module/shared-module.module';
 
 
 
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     WizardRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModuleModule
 
 
 

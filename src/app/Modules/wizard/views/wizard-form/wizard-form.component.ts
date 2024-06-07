@@ -15,6 +15,9 @@ import { Action } from 'rxjs/internal/scheduler/Action';
 })
 export class WizardFormComponent implements OnInit {
 
+  protected iconType: string = 'check';
+  protected msg: string = 'created with success';
+
 
   //for fixed form inputs
   protected formTemplate = [

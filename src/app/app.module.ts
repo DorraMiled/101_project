@@ -9,7 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeindexComponent } from './views/homeindex/homeindex.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { IconComponent } from './components/icon/icon.component';
+import { SharedModuleModule } from './Modules/shared-module/shared-module.module';
+
+
 
 
 
@@ -17,8 +19,8 @@ import { IconComponent } from './components/icon/icon.component';
   declarations: [
     AppComponent,
     HomeindexComponent,
-    SideBarComponent,
-    IconComponent,
+    SideBarComponent
+
 
   ],
   imports: [
@@ -27,6 +29,7 @@ import { IconComponent } from './components/icon/icon.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    SharedModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
